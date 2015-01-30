@@ -8,6 +8,7 @@ The entire framework relies on a custom made Bootstrap, which is tailored for ou
 
 #### Classes and IDs
 ***Syntax:*** `<purpose>--<sub-purpose> {}`
+
 **Capitalized** with words separated by a **double dash**:
 
 ```css
@@ -24,8 +25,25 @@ Begin the ID or a Class with the purpose. Ex. If you are designing a user profil
 
 We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and the styling for that JS event is NOT exclusive to that particular JS class. i.e. DO NOT STYLE THE CLASSES YOU USE FOR JS.
 
+#### Class Reuse - sClasses
+***Syntax:*** `sClass--<styling>`
+
+sClasses are also known as special classes. These special classes exists all over the portal. We call the classes like `Stick--To--Right` or `Stick--To--Left` as ***sClasses***. sClass exists to solve two problems. The first is to make maximum reuse of the styling properties and the second is the ability to have a consistent code throughout the site. In programatic terms, these can be called functions.
+
+Begin with **sClass** followed by the **styling** separated by **double dash**
+```css
+.sClass--Stick--To--Right {}
+.sClass--Perfect--Center{}
+```
+
+Here's a real-world example of how this can be used:
+```html
+<div class="File--Modal--Metadata sClass--Stick--To--Right"> /*We have a File Modal Dialog that is usually center aligned to the screen. And sClass--Stick--To--Right will make it stick to right which has right: 0;*/
+</div>
+```
 #### Images and Icons
 ***Syntax:*** `<type>-<purpose>.<extension>`
+
 **lowercase** image filenames and begins with a **purpose**
 ```shell
 icon-home.svg
