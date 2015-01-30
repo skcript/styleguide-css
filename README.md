@@ -14,7 +14,9 @@ The entire framework relies on a custom made Bootstrap, which is tailored for ou
 .User--Profile--Name {}
 #User--Profile--JS {}
 ```
-Begin the ID or a Class with the purpose. Ex. If you are designing a user profile seciton of the site, start with User--Profile and append it with the sub classes. If a particular ID or Class is associated with an JavaScript event, append ***JS*** to that particular class.
+Begin the ID or a Class with the purpose. Ex. If you are designing a user profile section of the site, start with User--Profile and append it with the sub classes. If a particular ID or Class is associated with an JavaScript event, append ***JS*** to that particular class.
+
+**Clarification:** Always prefer using classes rather than IDs. Its easier to debug. Use IDs only when you need it for JavaScript actions that are unique to only one div.
 
 #### Images and Icons
 **lowercase** image filenames and begins with a **purpose**
