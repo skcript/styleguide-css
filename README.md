@@ -22,7 +22,7 @@ Begin the ID or a Class with the purpose. Ex. If you are designing a user profil
 #### Classes and IDs for JS
 Syntax: `<targetName>--JS`
 
-We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and even the styling for that JS event is exclusive to that particular JS class.
+We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and the styling for that JS event is NOT exclusive to that particular JS class. i.e. DO NOT STYLE THE CLASSES YOU USE FOR JS.
 
 #### Images and Icons
 Syntax: `<type>-<purpose>.<extension>`
