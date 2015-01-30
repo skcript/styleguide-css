@@ -150,3 +150,7 @@ We are very keen in using comments in CSS. This helps us quickly navigate a 2000
 ```
 
 The first section of the CSS will ALWAYS be `Overrides and Global Styling`. The last section will always be `Experiments`. This section will always have the code that you are trying out. Once you're sure about using the code you tried, move it to the corresponding section of CSS.
+
+#### So
+
+We love what we do at (Skcript)[http://www.skcript.com/], and we love to design code. 
