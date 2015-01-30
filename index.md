@@ -1,4 +1,8 @@
-## Skcript’s CSS Styleguide - Designing CSS the right way #DesignCode
+---
+layout: default
+---
+
+## Skcript’s CSS Styleguide #DesignCode
 
 Skcript uses a very strict mix of LESS and naked CSS for styling amazing UIs for its products. This document includes a variety of styling techniques that would improve the performance, rendering and improvements to the existing as well as new CSS.
 
@@ -29,6 +33,7 @@ We have had some pretty terrible experience with handling JavaScript when it com
 ***Syntax:***`<classname>.is<state>`
 
 Sometimes, when you will have to style the CSS according to the state of the element, say a div is now hovered and you need a styling for that, here's how you could handle the styling for particular states:
+
 ```css
 .User--Profile.isHovered {}
 .User--Profile.isActive {}
@@ -41,6 +46,7 @@ Sometimes, when you will have to style the CSS according to the state of the ele
 sClasses are also known as special classes. These special classes exists all over the portal. We call the classes like `Stick--To--Right` or `Stick--To--Left` as ***sClasses***. sClass exists to solve two problems. The first is to make maximum reuse of the styling properties and the second is the ability to have a consistent code throughout the site. In programatic terms, these can be called functions.
 
 Begin with **sClass** followed by the **styling** separated by **double dash**
+
 ```css
 .sClass--Stick--To--Right {}
 .sClass--Perfect--Center {}
@@ -59,11 +65,13 @@ Here's a real-world example of how this can be used:
 ***Syntax:*** `<type>-<purpose>.<extension>`
 
 **lowercase** image filenames and begins with a **purpose**
-```shell
+
+```
 icon-home.svg
 profile-fallback.svg
 background-fallback.png
 ```
+
 **Tip:** If you are using CSS with Rails. Migrate to SCSS with `asset-data-url('image-filename.svg')` instead of using the regular `url('image-filename.svg')`
 
 Always prefer using compressed PNGs for large background images, and SVGs for elements like icons. Icons are usually crafted with [Sketch for Mac](http://bohemiancoding.com/sketch/) with 512x512 dimensions.
@@ -101,10 +109,11 @@ All the colors are structured in `endurance` alphabatically and with a correspon
 #### Spacing
 
 All the CSS properties live in a new line. And are separated by a `;`. Here's an example:
+
 ```css
-.User--Profile,
 .Admin--Profile {
    background: url('profile-fallback.svg');
+   font-size: 15px;
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
@@ -153,4 +162,4 @@ The first section of the CSS will ALWAYS be `Overrides and Global Styling`. The 
 
 #### So
 
-We love what we do at (Skcript)[http://www.skcript.com/], and we love to design code.
+We love what we do at [Skcript](http://www.skcript.com/), and we love to design code.

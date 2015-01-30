@@ -1,0 +1,9 @@
+# Site settings
+title: CSS Styleguide--Skcript
+tag_text: #DesignCode
+description: The CSS Styleguide that we use at Skcript.
+
+# Build settings
+markdown: redcarpet
+
+exclude: ["README.md"]
