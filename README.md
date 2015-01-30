@@ -57,3 +57,15 @@ background-fallback.png
 **Tip:** If you are using CSS with Rails. Migrate to SCSS with `asset-data-url('image-filename.svg')` instead of using the regular `url('image-filename.svg')`
 
 Always prefer using compressed PNGs for large background images, and SVGs for elements like icons. Icons are usually crafted with [Sketch for Mac](http://bohemiancoding.com/sketch/) with 512x512 dimensions.
+
+#### Modules and Styling
+***Syntax:*** `<modulename>--<descendant>`
+
+**Capitalized** name of the module followed by its **descendant** seperated by **double dash**
+
+A lot of the products we create are driven by Modules, and so is the development. All of the CSS Classes that are exclusive to a particular module are named according to that module. Here's an example:
+
+```css
+.FileUploads--Name {}
+.FolderUploads--Size {}
+```
