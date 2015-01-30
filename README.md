@@ -25,6 +25,16 @@ Begin the ID or a Class with the purpose. Ex. If you are designing a user profil
 
 We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and the styling for that JS event is NOT exclusive to that particular JS class. i.e. DO NOT STYLE THE CLASSES YOU USE FOR JS.
 
+#### Classes, IDs and States
+***Syntax:***`<classname>.is<state>`
+
+Sometimes, when you will have to style the CSS according to the state of the element, say a div is now hovered and you need a styling for that, here's how you could handle the styling for particular states:
+```css
+.User--Profile.isHovered {}
+.User--Profile.isActive {}
+.User--Profile.isExpanded {}
+```
+
 #### Class Reuse - sClasses
 ***Syntax:*** `sClass--<styling>`
 
