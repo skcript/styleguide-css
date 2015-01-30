@@ -7,7 +7,7 @@ The entire framework relies on a custom made Bootstrap, which is tailored for ou
 ### Naming Conventions
 
 #### Classes and IDs
-Syntax: `<purpose>--<sub-purpose> {}`
+***Syntax:*** `<purpose>--<sub-purpose> {}`
 **Capitalized** with words separated by a **double dash**:
 
 ```css
@@ -20,12 +20,12 @@ Begin the ID or a Class with the purpose. Ex. If you are designing a user profil
 ***Clarification***: Always prefer using classes rather than IDs. Its easier to debug. Use IDs only when you need it for JavaScript actions that are unique to only one div.
 
 #### Classes and IDs for JS
-Syntax: `<targetName>--JS`
+***Syntax:*** `<targetName>--JS`
 
 We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and the styling for that JS event is NOT exclusive to that particular JS class. i.e. DO NOT STYLE THE CLASSES YOU USE FOR JS.
 
 #### Images and Icons
-Syntax: `<type>-<purpose>.<extension>`
+***Syntax:*** `<type>-<purpose>.<extension>`
 **lowercase** image filenames and begins with a **purpose**
 ```shell
 icon-home.svg
