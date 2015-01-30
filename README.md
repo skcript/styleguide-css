@@ -96,3 +96,41 @@ Colors are usually handled by a separate CSS file in your project named `enduran
 **Note:** Always use **RGB and RGBA** color schemes and NOT HEX.
 
 All the colors are structured in `endurance` alphabatically and with a corresponding hover states or active states that align to the color scheme. This is to make sure its easy for us to debug. And thanks to a ton of pre-processors that are available that will help us minify the CSS and JS files during production.
+
+
+#### Spacing
+
+All the CSS properties live in a new line. And are separated by a `;`. Here's an example:
+```css
+.User--Profile,
+.Admin--Profile {
+   background: url('profile-fallback.svg');
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+```
+
+#### Grouping
+
+Grouping the CSS properties are very important. Always group properties alphabatically (which aligns with the native CSS) and push special character grouping towards the end:
+
+```css
+.Admin--Profile {
+   background: url('profile-fallback.svg');
+   font-size: 15px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+```
+
+#### Quotes
+
+Quotes are very important when it comes to identifying the strings in the CSS. Skcript always uses **single quotes** to represent a string.
+
+```css
+.Admin--Profile {
+   background: url('profile-fallback.svg');
+   font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;
+}
