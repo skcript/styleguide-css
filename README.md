@@ -134,3 +134,19 @@ Quotes are very important when it comes to identifying the strings in the CSS. S
    background: url('profile-fallback.svg');
    font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;
 }
+```
+
+#### Comments
+
+We are very keen in using comments in CSS. This helps us quickly navigate a 2000 loc CSS file with ease. Before you write any CSS code, it is important to list down everything that the CSS file will contain. This will serve as the index to the rest of the file.
+
+```css
+/*
+1. Global Styling & Overrides
+2. Section Title
+3. Section Title
+4. Experiments
+*/
+```
+
+The first section of the CSS will ALWAYS be `Overrides and Global Styling`. The last section will always be `Experiments`. This section will always have the code that you are trying out. Once you're sure about using the code you tried, move it to the corresponding section of CSS.
