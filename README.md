@@ -79,3 +79,20 @@ A lot of the products we create are driven by Modules, and so is the development
 .FileUploads--Name {}
 .FolderUploads--Size {}
 ```
+
+#### Using Variables
+***Syntax:***`<property>--<style/value>--<ModuleName>`
+
+Variables are special. We use variables in places where an event occured and there's a necessity to change the styling for that particular element. This example would show you how to create a CSS variable when a color change is required:
+
+```css
+.color--skcriptRed--Menu {}
+```
+
+#### Colors
+
+Colors are usually handled by a separate CSS file in your project named `endurance`. The `endurance` contains global attributes that can be re-used over and over again, which includes things like the color scheme.
+
+**Note:** Always use **RGB and RGBA** color schemes and NOT HEX.
+
+All the colors are structured in `endurance` alphabatically and with a corresponding hover states or active states that align to the color scheme. This is to make sure its easy for us to debug. And thanks to a ton of pre-processors that are available that will help us minify the CSS and JS files during production.
