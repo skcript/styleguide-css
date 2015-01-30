@@ -33,12 +33,16 @@ sClasses are also known as special classes. These special classes exists all ove
 Begin with **sClass** followed by the **styling** separated by **double dash**
 ```css
 .sClass--Stick--To--Right {}
-.sClass--Perfect--Center{}
+.sClass--Perfect--Center {}
+.sClass--Img--Width-100 {}
 ```
 
 Here's a real-world example of how this can be used:
 ```html
 <div class="File--Modal--Metadata sClass--Stick--To--Right"> /*We have a File Modal Dialog that is usually center aligned to the screen. And sClass--Stick--To--Right will make it stick to right which has right: 0;*/
+   <div class="File--Preview--Thumbnail sClass--Perfect--Center">
+      <img src="file-thumbnail.png" class="sClass--Img--Width-100" />
+   </div>
 </div>
 ```
 #### Images and Icons
@@ -51,3 +55,5 @@ profile-fallback.svg
 background-fallback.png
 ```
 **Tip:** If you are using CSS with Rails. Migrate to SCSS with `asset-data-url('image-filename.svg')` instead of using the regular `url('image-filename.svg')`
+
+Always prefer using compressed PNGs for large background images, and SVGs for elements like icons. Icons are usually crafted with [Sketch for Mac](http://bohemiancoding.com/sketch/) with 512x512 dimensions.
