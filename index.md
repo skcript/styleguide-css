@@ -3,6 +3,7 @@ layout: default
 ---
 
 ## Skcript’s CSS Styleguide #DesignCode
+[![#DesignCode](http://i.imgur.com/KbqDX1O.png)](#DesignCode)
 
 Skcript uses a very strict mix of LESS and naked CSS for styling amazing UIs for its products. This document includes a variety of styling techniques that would improve the performance, rendering and improvements to the existing as well as new CSS.
 
