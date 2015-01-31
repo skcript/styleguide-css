@@ -51,7 +51,7 @@ Begin with **sClass** followed by the **styling** separated by **double dash**
 ```
 
 Here's a real-world example of how this can be used:
-```html
+```
 <div class="File--Modal--Metadata sClass--Stick--To--Right"> /*We have a File Modal Dialog that is usually center aligned to the screen. And sClass--Stick--To--Right will make it stick to right which has right: 0;*/
    <div class="File--Preview--Thumbnail sClass--Perfect--Center">
       <img src="file-thumbnail.png" class="sClass--Img--Width-100" />
