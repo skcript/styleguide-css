@@ -7,7 +7,9 @@ layout: default
 
 Skcript uses a very strict mix of LESS and naked CSS for styling amazing UIs for its products. This document includes a variety of styling techniques that would improve the performance, rendering and improvements to the existing as well as new CSS.
 
-The entire framework relies on a custom made Bootstrap, which is tailored for our needs, and everything is very structured class names and meaningful hyphens. This is make sure the code is structured and is organized for any Skcript’s developer to understand and take things forward with ease.
+We heavily relies on Twitter Bootstrap and also our internal Branding CSS to build all the products. The goal here is to follow what [MDO](https://twitter.com/mdo) once told:
+
+> Every line of code should appear to be written by a single person, no matter the number of contributors.
 
 ### Naming Conventions
 
@@ -161,7 +163,3 @@ We are very keen in using comments in CSS. This helps us quickly navigate a 2000
 ```
 
 The first section of the CSS will ALWAYS be `Overrides and Global Styling`. The last section will always be `Experiments`. This section will always have the code that you are trying out. Once you're sure about using the code you tried, move it to the corresponding section of CSS.
-
-#### So
-
-We love what we do at [Skcript](http://www.skcript.com/), and we love to design code.
