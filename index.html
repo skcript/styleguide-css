@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>CSS Styleguide by skcript</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>CSS Styleguide</h1>
+        <p>Skcript&#39;s CSS authoring style guide</p>
+
+        <p class="view"><a href="https://github.com/skcript/styleguide-css">View the Project on GitHub <small>skcript/styleguide-css</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/skcript/styleguide-css/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/skcript/styleguide-css/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/skcript/styleguide-css">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="skcripts-css-styleguide-designcode" class="anchor" href="#skcripts-css-styleguide-designcode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Skcript’s CSS Styleguide #DesignCode</h2>
+
+<p><a href="#DesignCode"><img src="http://i.imgur.com/KbqDX1O.png" alt="#DesignCode"></a></p>
+
+<p>Skcript uses a very strict mix of LESS and naked CSS for styling amazing UIs for its products. This document includes a variety of styling techniques that would improve the performance, rendering and improvements to the existing as well as new CSS.</p>
+
+<p>We heavily relies on Twitter Bootstrap and also our internal Branding CSS to build all the products. The goal here is to follow what <a href="https://twitter.com/mdo">MDO</a> once told:</p>
+
+<blockquote>
+<p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
+</blockquote>
+
+<h3>
+<a id="naming-conventions" class="anchor" href="#naming-conventions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naming Conventions</h3>
+
+<h4>
+<a id="classes-and-ids" class="anchor" href="#classes-and-ids" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes and IDs</h4>
+
+<p><strong><em>Syntax:</em></strong> <code>&lt;purpose&gt;--&lt;sub-purpose&gt; {}</code></p>
+
+<p><strong>Capitalized</strong> with words separated by a <strong>double dash</strong>:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.User--Profile</span> {}
+<span class="pl-e">.User--Profile--Name</span> {}
+<span class="pl-e">#User--Profile--JS</span> {}</pre></div>
+
+<p>Begin the ID or a Class with the purpose. Ex. If you are designing a user profile section of the site, start with User--Profile and append it with the sub classes. If a particular ID or Class is associated with an JavaScript event, append <strong><em>JS</em></strong> to that particular class.</p>
+
+<p><strong><em>Clarification</em></strong>: Always prefer using classes rather than IDs. Its easier to debug. Use IDs only when you need it for JavaScript actions that are unique to only one div.</p>
+
+<h4>
+<a id="classes-and-ids-for-js" class="anchor" href="#classes-and-ids-for-js" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes and IDs for JS</h4>
+
+<p><strong><em>Syntax:</em></strong> <code>&lt;targetName&gt;--JS</code></p>
+
+<p>We have had some pretty terrible experience with handling JavaScript when it comes to handling some classes that we have reused all over the code. The syntax above is the way to use a class that is tied to JS. And make sure the class is exclusive to JS and the styling for that JS event is NOT exclusive to that particular JS class. i.e. DO NOT STYLE THE CLASSES YOU USE FOR JS.</p>
+
+<h4>
+<a id="classes-ids-and-states" class="anchor" href="#classes-ids-and-states" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes, IDs and States</h4>
+
+<p><strong><em>Syntax:</em></strong><code>&lt;classname&gt;.is&lt;state&gt;</code></p>
+
+<p>Sometimes, when you will have to style the CSS according to the state of the element, say a div is now hovered and you need a styling for that, here's how you could handle the styling for particular states:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.User--Profile.isHovered</span> {}
+<span class="pl-e">.User--Profile.isActive</span> {}
+<span class="pl-e">.User--Profile.isExpanded</span> {}</pre></div>
+
+<h4>
+<a id="class-reuse---sclasses" class="anchor" href="#class-reuse---sclasses" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class Reuse - sClasses</h4>
+
+<p><strong><em>Syntax:</em></strong> <code>sClass--&lt;styling&gt;</code></p>
+
+<p>sClasses are also known as special classes. These special classes exists all over the portal. We call the classes like <code>Stick--To--Right</code> or <code>Stick--To--Left</code> as <strong><em>sClasses</em></strong>. sClass exists to solve two problems. The first is to make maximum reuse of the styling properties and the second is the ability to have a consistent code throughout the site. In programatic terms, these can be called functions.</p>
+
+<p>Begin with <strong>sClass</strong> followed by the <strong>styling</strong> separated by <strong>double dash</strong></p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.sClass--Stick--To--Right</span> {}
+<span class="pl-e">.sClass--Perfect--Center</span> {}
+<span class="pl-e">.sClass--Img--Width-100</span> {}</pre></div>
+
+<p>Here's a real-world example of how this can be used:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>File--Modal--Metadata sClass--Stick--To--Right<span class="pl-pds">"</span></span>&gt; /*We have a File Modal Dialog that is usually center aligned to the screen. And sClass--Stick--To--Right will make it stick to right which has right: 0;*/
+   &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>File--Preview--Thumbnail sClass--Perfect--Center<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>file-thumbnail.png<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sClass--Img--Width-100<span class="pl-pds">"</span></span> /&gt;
+   &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h4>
+<a id="images-and-icons" class="anchor" href="#images-and-icons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Images and Icons</h4>
+
+<p><strong><em>Syntax:</em></strong> <code>&lt;type&gt;-&lt;purpose&gt;.&lt;extension&gt;</code></p>
+
+<p><strong>lowercase</strong> image filenames and begins with a <strong>purpose</strong></p>
+
+<pre><code>icon-home.svg
+profile-fallback.svg
+background-fallback.png
+</code></pre>
+
+<p><strong>Tip:</strong> If you are using CSS with Rails. Migrate to SCSS with <code>asset-data-url('image-filename.svg')</code> instead of using the regular <code>url('image-filename.svg')</code></p>
+
+<p>Always prefer using compressed PNGs for large background images, and SVGs for elements like icons. Icons are usually crafted with <a href="http://bohemiancoding.com/sketch/">Sketch for Mac</a> with 512x512 dimensions.</p>
+
+<h4>
+<a id="modules-and-styling" class="anchor" href="#modules-and-styling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modules and Styling</h4>
+
+<p><strong><em>Syntax:</em></strong> <code>&lt;modulename&gt;--&lt;descendant&gt;</code></p>
+
+<p><strong>Capitalized</strong> name of the module followed by its <strong>descendant</strong> seperated by <strong>double dash</strong></p>
+
+<p>A lot of the products we create are driven by Modules, and so is the development. All of the CSS Classes that are exclusive to a particular module are named according to that module. Here's an example:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.FileUploads--Name</span> {}
+<span class="pl-e">.FolderUploads--Size</span> {}</pre></div>
+
+<h4>
+<a id="using-variables" class="anchor" href="#using-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Variables</h4>
+
+<p><strong><em>Syntax:</em></strong><code>&lt;property&gt;--&lt;style/value&gt;--&lt;ModuleName&gt;</code></p>
+
+<p>Variables are special. We use variables in places where an event occured and there's a necessity to change the styling for that particular element. This example would show you how to create a CSS variable when a color change is required:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.color--skcriptRed--Menu</span> {}</pre></div>
+
+<h4>
+<a id="colors" class="anchor" href="#colors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Colors</h4>
+
+<p>Colors are usually handled by a separate CSS file in your project named <code>endurance</code>. The <code>endurance</code> contains global attributes that can be re-used over and over again, which includes things like the color scheme.</p>
+
+<p><strong>Note:</strong> Always use <strong>RGB and RGBA</strong> color schemes and NOT HEX.</p>
+
+<p>All the colors are structured in <code>endurance</code> alphabatically and with a corresponding hover states or active states that align to the color scheme. This is to make sure its easy for us to debug. And thanks to a ton of pre-processors that are available that will help us minify the CSS and JS files during production.</p>
+
+<h4>
+<a id="spacing" class="anchor" href="#spacing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spacing</h4>
+
+<p>All the CSS properties live in a new line. And are separated by a <code>;</code>. Here's an example:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.Admin--Profile</span> {
+   <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>profile-fallback.svg<span class="pl-pds">'</span></span>);
+   <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">15<span class="pl-k">px</span></span>;
+   <span class="pl-c1">-webkit-<span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+   <span class="pl-c1">-moz-<span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+   <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+}</pre></div>
+
+<h4>
+<a id="grouping" class="anchor" href="#grouping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grouping</h4>
+
+<p>Grouping the CSS properties are very important. Always group properties alphabatically (which aligns with the native CSS) and push special character grouping towards the end:</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.Admin--Profile</span> {
+   <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>profile-fallback.svg<span class="pl-pds">'</span></span>);
+   <span class="pl-c1"><span class="pl-c1">font-size</span></span>: <span class="pl-c1">15<span class="pl-k">px</span></span>;
+   <span class="pl-c1">-webkit-<span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+   <span class="pl-c1">-moz-<span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+   <span class="pl-c1"><span class="pl-c1">border-radius</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>;
+}</pre></div>
+
+<h4>
+<a id="quotes" class="anchor" href="#quotes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quotes</h4>
+
+<p>Quotes are very important when it comes to identifying the strings in the CSS. Skcript always uses <strong>single quotes</strong> to represent a string.</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-e">.Admin--Profile</span> {
+   <span class="pl-c1"><span class="pl-c1">background</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>profile-fallback.svg<span class="pl-pds">'</span></span>);
+   <span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">'</span>Helvetica Neue Light<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Helvetica Neue<span class="pl-pds">'</span></span>, <span class="pl-c1">Helvetica</span>, <span class="pl-c1">Arial</span>;
+}</pre></div>
+
+<h4>
+<a id="comments" class="anchor" href="#comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comments</h4>
+
+<p>We are very keen in using comments in CSS. This helps us quickly navigate a 2000 loc CSS file with ease. Before you write any CSS code, it is important to list down everything that the CSS file will contain. This will serve as the index to the rest of the file.</p>
+
+<div class="highlight highlight-source-css"><pre><span class="pl-c">/*</span>
+<span class="pl-c">1. Global Styling &amp; Overrides</span>
+<span class="pl-c">2. Section Title</span>
+<span class="pl-c">3. Section Title</span>
+<span class="pl-c">4. Experiments</span>
+<span class="pl-c">*/</span></pre></div>
+
+<p>The first section of the CSS will ALWAYS be <code>Overrides and Global Styling</code>. The last section will always be <code>Experiments</code>. This section will always have the code that you are trying out. Once you're sure about using the code you tried, move it to the corresponding section of CSS.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/skcript">skcript</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
