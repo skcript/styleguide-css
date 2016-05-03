@@ -3,7 +3,7 @@
 
 Skcript uses a very strict mix of LESS and naked CSS for styling amazing UIs for its products. This document includes a variety of styling techniques that would improve the performance, rendering and improvements to the existing as well as new CSS.
 
-We heavily relies on Twitter Bootstrap and also our internal Branding CSS to build all the products. The goal here is to follow what [MDO](https://twitter.com/mdo) once told:
+This styleguide heavily relies on Twitter Bootstrap and also our internal Branding CSS to build all our products. The goal here is to follow what [MDO](https://twitter.com/mdo) once told:
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
